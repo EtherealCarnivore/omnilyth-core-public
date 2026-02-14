@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/the-omilyth/Chromatic_Orb.png" />
+    <link rel="icon" type="image/png" href="/omnilyth-core-public/Chromatic_Orb.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Path of Exile chromatic cost calculator — Vorici, Tainted, Omen of Blanching, and Jeweller's Method compared side by side." />
-    <title>PoE Chromatic Calculator</title>
-    <script type="module" crossorigin src="/the-omilyth/assets/index-DPCNhmp3.js"></script>
-    <link rel="stylesheet" crossorigin href="/the-omilyth/assets/index-DM3E7-Sc.css">
+    <meta name="description" content="Project Omnilyth — PoE crafting toolkit: Chromatic, Fusing, Socketing calculators and Map Mod Regex generator." />
+    <title>Project Omnilyth</title>
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function() {
+        var redirect = new URLSearchParams(window.location.search).get('p');
+        if (redirect) {
+          var q = new URLSearchParams(window.location.search);
+          q.delete('p');
+          var search = q.toString();
+          history.replaceState(null, '',
+            redirect + (search ? '?' + search : '') + window.location.hash
+          );
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/omnilyth-core-public/assets/index-StS4Kiu4.js"></script>
+    <link rel="stylesheet" crossorigin href="/omnilyth-core-public/assets/index-BWoFFEYd.css">
   </head>
   <body>
     <div id="root"></div>
