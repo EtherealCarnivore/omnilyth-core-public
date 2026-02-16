@@ -248,3 +248,4 @@ For feature requests, bug reports, or contributions, please contact [@EtherealCa
 ---
 
 **Version:** 2.0 (Feb 2026) | **License:** MIT | **Made with ❤️ for the PoE community**
+
