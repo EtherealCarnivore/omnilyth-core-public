@@ -1,0 +1,25 @@
+{
+  "name": "Project Omnilyth",
+  "short_name": "Omnilyth",
+  "description": "All-in-one toolkit for Path of Exile - Crafting calculators, atlas tools, and economy utilities",
+  "start_url": "/omnilyth-core-public/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#f4a900",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/omnilyth-core-public/Chromatic_Orb.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/omnilyth-core-public/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "categories": ["games", "utilities", "productivity"],
+  "screenshots": []
+}

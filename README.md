@@ -14,6 +14,15 @@ We're combining crafting calculators, atlas tools, economy utilities, and more i
 
 ## 🎨 Latest Updates (v2.0 - Feb 2026)
 
+### 🆕 Regex Library System
+- **Cookie-Based Pattern Storage** — Save your favorite regex patterns from any tool (up to ~50 patterns, 4KB limit)
+- **Unified Library Page** — View, search, filter, and manage all saved patterns in one place
+- **Smart Auto-Naming** — Patterns auto-named with tool, configuration, and timestamp
+- **Topbar Badge** — Real-time pattern count indicator for quick access
+- **One-Click Copy** — Instantly copy saved patterns to clipboard
+- **Storage Warnings** — Alerts at 80% capacity to manage your library
+- **WCAG AA Compliant** — Full accessibility support with proper touch targets
+
 ### ✨ Comprehensive UX Upgrade
 - **Enhanced Design System** — PoE-authentic gold accents, improved color contrast (WCAG AA compliant)
 - **Mobile Optimized** — 60-70% performance boost on mobile devices, proper touch targets (44px+)
@@ -55,6 +64,14 @@ We're combining crafting calculators, atlas tools, economy utilities, and more i
 
 ### Atlas / Mapping
 - **Map Mod Regex Generator** — Because typing regex by hand is a war crime
+- **Scarab Regex** — Generate regex to search for cheap scarabs in your stash, with live poe.ninja pricing
+
+### Leveling
+- **Vendor Leveling Regex** — Find vendor items with movement speed, sockets, links, and essential leveling stats
+- **Gem Regex** — Generate regex to search for skill gems in your stash
+
+### Utilities
+- **Regex Library** — Save and manage regex patterns from all tools with cookie-based storage
 
 ### External Tools
 - **Timeless Jewel Calculator** — Interactive skill tree for timeless jewel seed searching, keystone/small node toggles *(currently links to external app)*
@@ -69,6 +86,7 @@ We're combining crafting calculators, atlas tools, economy utilities, and more i
 |--------|------|
 | ✅ | **Mobile UI Optimization** — Complete! 60fps performance, proper touch targets, responsive design |
 | ✅ | **Enhanced UX Design** — Complete! WCAG AA compliant, PoE-themed colors, better contrast |
+| ✅ | **Regex Library System** — Complete! Cookie-based pattern storage with unified management interface |
 | :construction: | **Timeless Jewel Calculator Improvements** — Possibly remove manual seed entry page, deeper integration into Omnilyth |
 | :pushpin: | **Pinning Functionality** — Pin favorite tools to center UI dashboard, cookie-based |
 | :art: | **Better Category Split** — Reorganize module categories for clarity |

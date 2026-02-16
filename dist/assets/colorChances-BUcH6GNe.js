@@ -1,0 +1,1 @@
+function h(t,C,c){const o=[t,C,c],r=t+C+c,a=o.filter(n=>n>0).length;if(a===0)return{r:1/3,g:1/3,b:1/3};let e;return a===1?e=o.map(n=>n>0?.9*(10+n)/(r+15+5):(1-.9)/2+.9*(5/(r+15+5))):a===2?e=o.map(n=>n>0?.9*n/r:1-.9):e=o.map(n=>n/r),{r:e[0],g:e[1],b:e[2]}}export{h as g};

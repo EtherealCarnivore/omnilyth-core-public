@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Converts /the-omilyth/crafting/chromatic → /the-omilyth/?p=/crafting/chromatic
+      var seg = 1; // number of path segments to keep (repo name)
+      var loc = window.location;
+      var path = loc.pathname.split('/').slice(seg + 1).join('/');
+      loc.replace(
+        loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') +
+        loc.pathname.split('/').slice(0, seg + 1).join('/') + '/' +
+        '?p=/' + path +
+        (loc.search ? '&q=' + loc.search.slice(1) : '') +
+        loc.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

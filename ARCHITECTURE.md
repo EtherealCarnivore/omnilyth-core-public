@@ -297,6 +297,76 @@ Calculator State (Local)
 └── UI State (loading, errors)
 ```
 
+### 7.3 Regex Library System
+
+**Purpose:** Cookie-based storage for saving and managing regex patterns across all tools
+
+**Architecture:**
+
+```
+┌──────────────────────────────────────────────────────┐
+│ Regex Tools (Map Mods, Gems, Scarabs, etc.)        │
+│ - Generate regex patterns                           │
+│ - SaveRegexButton component                         │
+└────────────────┬─────────────────────────────────────┘
+                 │
+                 ↓ useRegexLibrary hook
+┌──────────────────────────────────────────────────────┐
+│ Cookie Storage Layer (src/utils/regexLibrary.js)    │
+│ - CRUD operations (add, update, delete, clearAll)   │
+│ - Storage validation (4KB limit)                    │
+│ - Pattern deduplication                             │
+│ - Auto-generated UUIDs                              │
+└────────────────┬─────────────────────────────────────┘
+                 │
+                 ↓ Browser Cookies
+┌──────────────────────────────────────────────────────┐
+│ Cookie: omnilyth_regex_library                      │
+│ - Max size: ~4KB (~50 patterns)                     │
+│ - Max age: 365 days                                 │
+│ - SameSite: Strict                                  │
+│ - Structure: {version: 1, patterns: [...]}         │
+└──────────────────────────────────────────────────────┘
+```
+
+**Data Schema:**
+```javascript
+{
+  version: 1,
+  patterns: [
+    {
+      id: "uuid-v4",
+      name: "User-provided name",
+      pattern: "regex pattern string",
+      tool: "tool-id",              // e.g., "map-mods", "gem-regex"
+      toolLabel: "Display name",    // e.g., "Map Mod Regex"
+      createdAt: "ISO timestamp",
+      updatedAt: "ISO timestamp"
+    }
+  ]
+}
+```
+
+**Components:**
+- **SaveRegexButton** (`src/components/SaveRegexButton.jsx`) - Reusable save button with modal
+- **RegexLibraryPage** (`src/pages/RegexLibraryPage.jsx`) - Library management interface
+- **useRegexLibrary** (`src/hooks/useRegexLibrary.js`) - React hook for state management
+
+**Features:**
+- 80% storage capacity warnings
+- Duplicate pattern detection
+- Real-time search and filtering
+- Tool-based categorization
+- One-click copy to clipboard
+- Confirmation dialogs for destructive actions
+- WCAG 2.1 AA accessibility compliance
+
+**Storage Limits:**
+- Maximum cookie size: 4KB (browser limit)
+- Estimated capacity: 50-60 patterns
+- Warning threshold: 80% (3.2KB)
+- Pattern name limit: 50 characters
+
 ### 7.3 Data Persistence
 
 **Client-Side Only:**
