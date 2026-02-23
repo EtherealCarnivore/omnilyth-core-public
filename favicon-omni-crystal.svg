@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="prism1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prism2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prism3" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prism4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="prism5" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle for contrast -->
+  <circle cx="32" cy="32" r="31" fill="#0a0a0a" opacity="0.95"/>
+
+  <!-- Outer "O" ring (Omnilyth) -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#ring)" stroke-width="3" opacity="0.8"/>
+
+  <!-- Inner glow for the O -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#ring)" stroke-width="1.5" opacity="0.4" filter="blur(2px)"/>
+
+  <!-- Multi-faceted prismatic crystal (scaled down slightly to fit) -->
+  <!-- Top facet - Gold -->
+  <polygon points="32,12 42,22 32,27 22,22" fill="url(#prism1)" stroke="#fef3c7" stroke-width="0.5"/>
+
+  <!-- Upper left facet - Purple -->
+  <polygon points="22,22 32,27 32,37 18,32" fill="url(#prism2)" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Upper right facet - Green -->
+  <polygon points="32,27 42,22 46,32 32,37" fill="url(#prism3)" stroke="#d1fae5" stroke-width="0.5"/>
+
+  <!-- Center facet - Blue -->
+  <polygon points="32,37 18,32 22,42 32,48" fill="url(#prism4)" opacity="0.9" stroke="#dbeafe" stroke-width="0.5"/>
+
+  <!-- Lower right facet - Pink -->
+  <polygon points="32,37 46,32 42,42 32,48" fill="url(#prism5)" opacity="0.9" stroke="#fce7f3" stroke-width="0.5"/>
+
+  <!-- Bottom facet - Cyan/Green -->
+  <polygon points="32,48 22,42 32,52 42,42" fill="url(#prism3)" opacity="0.8" stroke="#d1fae5" stroke-width="0.5"/>
+
+  <!-- Highlights for shine -->
+  <polygon points="32,15 36,20 32,23 28,20" fill="#ffffff" opacity="0.7"/>
+  <circle cx="36" cy="25" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="28" cy="35" r="1.2" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Subtle sparkles on the O ring -->
+  <circle cx="32" cy="4" r="1" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="60" cy="32" r="1" fill="#10b981" opacity="0.9"/>
+  <circle cx="32" cy="60" r="1" fill="#8b5cf6" opacity="0.9"/>
+  <circle cx="4" cy="32" r="1" fill="#ec4899" opacity="0.9"/>
+</svg>

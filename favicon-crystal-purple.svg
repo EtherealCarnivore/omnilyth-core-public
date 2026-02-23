@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="purple1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purple2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purple3" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4b5fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle for contrast -->
+  <circle cx="32" cy="32" r="31" fill="#0f0a1a" opacity="0.95"/>
+
+  <!-- Multi-faceted crystal -->
+  <!-- Top facet -->
+  <polygon points="32,8 44,20 32,26 20,20" fill="url(#purple1)" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Upper left facet -->
+  <polygon points="20,20 32,26 32,38 16,32" fill="url(#purple2)" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Upper right facet -->
+  <polygon points="32,26 44,20 48,32 32,38" fill="url(#purple3)" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Center facet -->
+  <polygon points="32,38 16,32 20,44 32,50" fill="url(#purple1)" opacity="0.9" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Lower right facet -->
+  <polygon points="32,38 48,32 44,44 32,50" fill="url(#purple2)" opacity="0.9" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Bottom facet -->
+  <polygon points="32,50 20,44 32,56 44,44" fill="url(#purple3)" opacity="0.8" stroke="#ddd6fe" stroke-width="0.5"/>
+
+  <!-- Highlights for shine -->
+  <polygon points="32,12 38,18 32,22 26,18" fill="#ede9fe" opacity="0.6"/>
+  <circle cx="38" cy="24" r="2" fill="#ede9fe" opacity="0.5"/>
+</svg>
