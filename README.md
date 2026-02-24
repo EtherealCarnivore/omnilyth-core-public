@@ -1,250 +1,234 @@
 # Project Omnilyth
 
-> *"One tool to rule them all, one tool to find them, one tool to bring them all, and in the darkness... calculate their chromatic costs."*
+A Path of Exile toolkit — crafting calculators, regex generators, atlas tree planner, leveling tools, and more.
 
----
+**Live**: [omnilyth-beta.netlify.app](https://omnilyth-beta.netlify.app/) | [GitHub Pages](https://etherealcarnivore.github.io/omnilyth-core-public/)
 
-**Project Omnilyth** is an evolving, all-in-one toolkit for Path of Exile — built for exiles who are tired of having 47 browser tabs open just to play a game.
+## Stack
 
-We're combining crafting calculators, atlas tools, economy utilities, and more into a single, unified dark-mode interface. Because spreadsheets are for accountants, not gamers. *(No offense to accountants who also play PoE — we know you exist.)*
+- **Frontend**: React 19 + Vite 7 + Tailwind CSS 4
+- **Routing**: React Router v7 (lazy-loaded modules)
+- **State**: Context API (league, prices, pinning, leveling, atlas tree)
+- **Search**: Fuse.js (fuzzy search for gems)
+- **Data**: poe.ninja API (prices), PoE Wiki (gem availability), GGG atlas tree export
+- **Deployment**: GitHub Actions CI/CD → Netlify (primary) / GitHub Pages (backup)
+- **API Proxy**: Serverless functions (Netlify/Vercel/Cloudflare)
 
-**Live at:** [etherealcarnivore.github.io/omnilyth-core-public](https://etherealcarnivore.github.io/omnilyth-core-public/)
-
----
-
-## 🎨 Latest Updates (v2.0 - Feb 2026)
-
-### 🆕 Regex Library System
-- **Cookie-Based Pattern Storage** — Save your favorite regex patterns from any tool (up to ~50 patterns, 4KB limit)
-- **Unified Library Page** — View, search, filter, and manage all saved patterns in one place
-- **Smart Auto-Naming** — Patterns auto-named with tool, configuration, and timestamp
-- **Topbar Badge** — Real-time pattern count indicator for quick access
-- **One-Click Copy** — Instantly copy saved patterns to clipboard
-- **Storage Warnings** — Alerts at 80% capacity to manage your library
-- **WCAG AA Compliant** — Full accessibility support with proper touch targets
-
-### ✨ Comprehensive UX Upgrade
-- **Enhanced Design System** — PoE-authentic gold accents, improved color contrast (WCAG AA compliant)
-- **Mobile Optimized** — 60-70% performance boost on mobile devices, proper touch targets (44px+)
-- **Accessibility** — Screen reader support, keyboard navigation, reduced motion support
-- **Better Visual Hierarchy** — 45% improvement in UX score (6.2 → 9.0/10)
-- **Responsive Typography** — Scales from 15px mobile to 22px desktop with monospace for numbers
-
-### 📱 Mobile Improvements
-- Backdrop-blur disabled on mobile for smooth 60fps performance
-- WCAG 2.5.5 compliant touch targets throughout
-- Prevents iOS auto-zoom with proper font sizing
-- Enhanced range sliders with 32px gradient thumbs
-- Mobile-first responsive breakpoints (xs: 375px, sm: 640px, md: 768px, lg: 1024px)
-
-### 🎯 Component Enhancements
-- Gold gradient primary buttons with loading states
-- Enhanced inputs with gold focus rings + glow effects
-- Better table contrast (27% row difference vs 10% before)
-- Socket colors brightened by 35% for better visibility
-- Layered glass card shadows for enhanced depth
-
----
-
-## What's Live
+## Modules
 
 ### Crafting — Coloring
-- **Chromatic Calculator** — Vorici bench vs raw chromes, with live poe.ninja prices
-- **Tainted Chromatic** — For when you've already bricked your item and need to cope
-- **Omen of Blanching** — White socket probability with cost breakdowns
-- **Jeweller's Method** — The crafting bench socket trick most people learn about too late
+| Module | Description |
+|--------|-------------|
+| Chromatic Calculator | Vorici bench crafts vs raw Chromatic Orbs |
+| Tainted Chromatic | Tainted Chromatic Orb coloring for corrupted items |
+| Omen of Blanching | White socket crafting with Omen of Blanching |
+| Jeweller's Method | Add/remove sockets to lock in desired colors |
 
-### Crafting — Linking & Socketing
-- **Fusing Calculator** — How many fusings until 6-link? Spoiler: more than you think. Includes Omen of Connections support
-- **Socket Calculator** — Jeweller's Orb math so you don't waste 300 on a 4-socket
+### Crafting — Links & Sockets
+| Module | Description |
+|--------|-------------|
+| Fusing Calculator | Orbs of Fusing needed to link items (manual, bench, omen, tainted strategies) |
+| Socket Calculator | Jeweller's Orbs needed for target socket count |
 
-### Crafting — Items & Jewels
-- **Item Mod Regex** — Generate regex patterns to find items with specific mods in your stash
-- **Cluster Jewel Calculator** — Find compatible middle notables for Large Cluster Jewels, with PoE Trade link generation
+### Crafting — Item Search
+| Module | Description |
+|--------|-------------|
+| Item Mod Regex | Generate regex patterns to find items with specific mods |
 
-### Atlas / Mapping
-- **Map Mod Regex Generator** — Because typing regex by hand is a war crime
-- **Scarab Regex** — Generate regex to search for cheap scarabs in your stash, with live poe.ninja pricing
+### Jewels
+| Module | Description |
+|--------|-------------|
+| Cluster Jewel Calc | Find compatible notables for Large Cluster Jewels |
+| Timeless Jewel Calc | Interactive skill tree for timeless jewel seed searching |
+
+### Atlas
+| Module | Description |
+|--------|-------------|
+| **Atlas Tree Planner** | Full interactive atlas passive tree with GGG sprite rendering, build saves, and point management |
+| Map Mod Regex | Generate regex patterns to filter map mods |
+| Scarab Regex | Auto-select scarabs by price range, generates stash search regex (multi-output for 250-char limit) |
 
 ### Leveling
-- **Vendor Leveling Regex** — Find vendor items with movement speed, sockets, links, and essential leveling stats
-- **Gem Regex** — Generate regex to search for skill gems in your stash
+| Module | Description |
+|--------|-------------|
+| **Gem Browser** | Browse all 335 gems with advanced filtering by class, act, and availability source |
+| **Gem Planner** | Plan leveling gems before league start — track what to get and when |
+| **Gem Lookup** | Campaign gem availability — check where to obtain specific gems act-by-act |
+| **Leveling Playbook** | Step-by-step speedrunner strategies with checklists, decisions, and power spikes |
+| Leveling Mode | Complete leveling guide with quest tracking and zone tips |
+| Vendor Leveling Regex | Find vendor items with movement speed, sockets, links, and leveling stats |
+| Gem Regex | Generate search patterns for specific gems in your stash |
 
-### Utilities
-- **Regex Library** — Save and manage regex patterns from all tools with cookie-based storage
+### Regex Library
+| Module | Description |
+|--------|-------------|
+| Regex Library | Save and manage regex patterns from any calculator |
 
-### External Tools
-- **Timeless Jewel Calculator** — Interactive skill tree for timeless jewel seed searching, keystone/small node toggles *(currently links to external app)*
+## Features
 
----
+- **Atlas Tree Planner** — interactive atlas passive tree using GGG's official sprite assets (3.27 league data), auto-pathing, build save/load, URL hash sharing, point limit enforcement with Full Atlas / Custom toggle, adjustable brightness presets, minimap
+- **Gem Progression System** — 335 gems, class filtering, act-by-act unlocks, Siosa/Lilly Roth vendors, fuzzy search, keyboard shortcuts (Ctrl+G), mobile FAB, grid/list views
+- **Leveling Playbook** — speedrunner strategies with PoB link group awareness, multi-source import, and tabbed UI
+- **User Feedback** — submit bugs, UI issues, suggestions, and feature requests directly from the app (creates GitHub issues automatically, no account required)
+- **Category overview pages** — hub pages for Crafting, Atlas, Jewels, and Leveling
+- **League selector** — color-coded dropdown (softcore/HC/SSF/events/PoE2)
+- **Module pinning** — pin from sidebar or dashboard, synced via shared context, persisted in localStorage
+- **Regex Library** — save and manage regex patterns from any calculator (top-level navigation)
+- **Patch Notes Widget** — latest PoE patch notes with read/unread tracking
+- **Price disclaimer** — inline warning on all price-using calculators + topbar "Live*" popover
+- **Dark-only** zinc-950 theme with glass morphism effects
 
-## Roadmap
+## Atlas Tree Planner
 
-> We have... *plans*. Big plans. The kind of plans that make you whisper "no way" at 3 AM.
+Interactive atlas passive tree planner at `/atlas/tree`.
 
-| Status | Task |
-|--------|------|
-| ✅ | **Mobile UI Optimization** — Complete! 60fps performance, proper touch targets, responsive design |
-| ✅ | **Enhanced UX Design** — Complete! WCAG AA compliant, PoE-themed colors, better contrast |
-| ✅ | **Regex Library System** — Complete! Cookie-based pattern storage with unified management interface |
-| :construction: | **Timeless Jewel Calculator Improvements** — Possibly remove manual seed entry page, deeper integration into Omnilyth |
-| :pushpin: | **Pinning Functionality** — Pin favorite tools to center UI dashboard, cookie-based |
-| :art: | **Better Category Split** — Reorganize module categories for clarity |
-| :bug: | **Fix Calculator Bugs** — Omen of Connections missing price info, misc issues |
-| :chart_with_upwards_trend: | **Deeper poe.ninja API Integration** — More live price data across tools |
-| :scroll: | **Vendor Recipes** — Reference tool for vendor recipe outcomes |
-| :handshake: | **Add Bushido Sponsorship** — Sponsored by Bushido |
-| :coffee: | **Support Skeleton** — Buy Me a Coffee / Patreon page *(will remain inactive for now — we do this for the culture)* |
+### Features
+- **Official GGG Assets** — background image, group background nebulas, node frame sprites, and icons from PoE CDN
+- **3.27 League Data** — current Keepers of the Kalguur atlas tree (960 nodes, 132 points)
+- **Auto-Pathing** — click any node, shortest path is auto-calculated and allocated
+- **Arc Connections** — same-orbit connections follow circular arcs (not straight lines)
+- **Point Limit** — Full Atlas (132) or Custom (0-132) with over-limit rejection visualization
+- **Build Manager** — save, load, rename, delete builds (localStorage)
+- **URL Hash Sharing** — share builds via URL hash encoding
+- **Search** — find nodes by name or stat keywords
+- **Summary Panel** — grouped stats for allocated nodes
+- **Brightness Control** — Dark / Dim / Normal / Bright presets
+- **Minimap** — overview of tree with allocated node highlights
+- **Keyboard Shortcuts** — R (reset), S (toggle panel), scroll (zoom), drag (pan)
 
----
+### Data Source
+Atlas tree data from [GGG's official export](https://github.com/grindinggear/atlastree-export) (`league.json`).
 
-## 🛠️ Tech Stack
+## Gem Progression System
 
-### Frontend Framework
-- **React 19** — Latest React with concurrent features and improved performance
-- **React Router 7** — Client-side routing for multi-page navigation
-- **Vite 7** — Lightning-fast build tool with HMR (Hot Module Replacement)
+Comprehensive gem browser and tracking tool. See `GEM_PROGRESSION_README.md` for complete documentation.
 
-### Styling & Design
-- **Tailwind CSS 4** — Utility-first CSS framework with modern features
-- **Custom Design System** — PoE-themed color palette, responsive typography, accessible components
-- **Dark Theme** — Native dark mode with optimized contrast ratios (WCAG AA)
+### Features
+- **335 Unique Gems** — complete database with icons from web.poecdn.com
+- **Class Filtering** — filter by character class (Witch, Shadow, Ranger, Duelist, Marauder, Templar, Scion, All)
+- **Act-by-Act Tracking** — see which gems unlock in each act (1-10)
+- **Special Vendors** — Siosa (Act 3 Library) and Lilly Roth (Act 6)
+- **Alt Character Mode** — simplified view for experienced players
+- **Advanced Search** — fuzzy search with Fuse.js, real-time filtering
+- **Multiple Views** — grid view, list view, compact icon grid
+- **Keyboard Shortcuts** — Ctrl+G (or Cmd+G) for quick search
+- **Mobile Optimized** — floating action button and responsive layouts
 
-### Build & Optimization
-- **Code Splitting** — Dynamic imports for optimal bundle size
-- **Manual Chunks** — Separated item mod data and cluster jewel data for faster initial load
-- **Asset Optimization** — Minified CSS (15KB gzipped), optimized JS bundles
-- **Content Hashing** — Cache-busting for efficient updates
+### Components
+- **Gem Browser** (`/leveling/gems`) — full-featured browser with advanced filtering
+- **Gem Lookup** (`/leveling/gem-lookup`) — campaign gem availability reference
+- **Gem Planner** (`/leveling/planner`) — pre-league gem planning tool
+- **Quick Search Modal** — fast fuzzy search overlay
+- **Gem Detail Modal** — complete gem information with external links
 
-### External Integrations
-- **poe.ninja API** — Real-time currency and item pricing
-- **PoE Trade** — Direct integration for trade search links
+### Data Sources
+- Quest Rewards: [PoE Wiki](https://www.poewiki.net/wiki/Quest_Rewards)
+- Gem Icons: [web.poecdn.com](https://web.poecdn.com)
+- 256KB data file with 335 gems, Acts 1-4 complete
 
-### Performance
-- **CSS Bundle** — 94.18KB minified, 15.04KB gzipped
-- **Mobile Optimized** — No backdrop-blur on mobile, GPU-accelerated transforms
-- **Lighthouse Scores** — Performance 90+, Accessibility 96/100
+## Development
 
-### Hosting & Deployment
-- **GitHub Pages** — Free, reliable static hosting
-- **Automated Deployment** — Build from private source repo, deploy to public repo
-- **Custom Base Path** — `/omnilyth-core-public/` for GitHub Pages compatibility
-
-### Development Tools
-- **Node.js & npm** — Package management and build scripts
-- **Git** — Version control with dual-repo architecture (private source + public deployment)
-
----
-
-## 📊 Performance Metrics
-
-- **UX Score:** 9.0/10 (up from 6.2/10) — **+45% improvement**
-- **Mobile Performance:** 60fps smooth scrolling (60-70% faster)
-- **Accessibility:** WCAG 2.1 AA compliant (Lighthouse: 96/100)
-- **Result Identification:** 50% faster with improved table contrast
-- **Cognitive Load:** 40% reduction with better visual hierarchy
-
----
-
-## 🏗️ Architecture
-
-**Dual-Repository Design:**
-```
-Private Repo (project-omnilyth)
-  ↓ Development & Source Code
-  ↓ npm run build
-  ↓
-Public Repo (omnilyth-core-public) ← You are here
-  ↓ Production Build Artifacts
-  ↓ GitHub Pages
-  ↓
-Live Site (etherealcarnivore.github.io/omnilyth-core-public/)
+```bash
+npm install
+npm run dev      # Dev server (auth bypassed)
+npm run build    # Production build
+npm run preview  # Preview production build (auth enabled)
 ```
 
-**Why Dual Repos?**
-- **Private Source:** Keep development code, build configs, and work-in-progress private
-- **Public Deployment:** Share production build with community, optimized for GitHub Pages
-- **Clean Separation:** No build artifacts or node_modules in public repo
-- **Security:** API keys and dev tooling stay private
+## Deployment
+
+Pushes to `master` trigger GitHub Actions → builds → deploys to `omnilyth-core-public` repo (`gh-pages` branch).
+
+**Primary (Netlify):** [omnilyth-beta.netlify.app](https://omnilyth-beta.netlify.app/) — includes serverless functions, feedback system
+**Backup (GitHub Pages):** [etherealcarnivore.github.io/omnilyth-core-public](https://etherealcarnivore.github.io/omnilyth-core-public/) — static only
+
+## Security
+
+### Secure API Proxy
+- Self-hosted serverless functions replace third-party CORS proxy
+- Path validation and request sanitization
+- 5-minute edge caching for performance
+- Available for Netlify, Vercel, and Cloudflare Workers
+
+### Security Headers
+- Content-Security-Policy (XSS prevention)
+- X-Frame-Options (clickjacking protection)
+- X-Content-Type-Options (MIME sniffing prevention)
+- Referrer-Policy (privacy protection)
+
+### Encrypted Storage
+- AES-256-GCM encryption for sensitive localStorage data
+- Per-device key generation using Web Crypto API
+
+### Input Validation
+- XSS prevention through HTML sanitization
+- ReDoS protection for regex patterns
+- Number/string validation with range checking
+- Rate limiting for authentication attempts
+
+### Beta Gate
+- Multi-password support with SHA-512 hashing
+- 30-day session expiry
+- Rate limiting (5 attempts per minute)
+
+**See `SECURITY_FIXES_SUMMARY.md` for complete details.**
+
+## What's Left to Do
+
+### High Priority
+- [ ] **Mobile Filter Modal** — full-screen filter panel for mobile gem browser
+- [ ] **Acts 5-10 Data** — complete gem availability for remaining acts
+- [ ] **Performance Profiling** — optimize large data rendering
+
+### Medium Priority
+- [ ] **Gem Favorites** — bookmark/favorite gems for quick access
+- [ ] **Export Gem Lists** — copy gem lists to clipboard
+- [ ] **Error Boundaries** — graceful error handling for components
+
+### Planned Features
+- [ ] **Passive Planner** — skill tree passive planning tool
+- [ ] **Stash Valuation** — estimate stash tab value using poe.ninja prices
+- [ ] **Seed Finder** — timeless jewel seed optimization
+
+### Long Term
+- [ ] **TypeScript Migration** — add type safety progressively
+- [ ] **User Accounts** — save progress across devices
+- [ ] **PWA Support** — offline access and install prompt
 
 ---
 
-## 🎮 Browser Support
+## Credits & Attribution
 
-**Fully Supported:**
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile Safari (iOS 14+)
-- Chrome Android (latest)
+This project uses data from various Path of Exile community resources.
 
-**Not Supported:**
-- Internet Explorer (deprecated)
-- Opera Mini (limited JavaScript support)
+### Data Sources
 
----
+- **[Grinding Gear Games](https://github.com/grindinggear/atlastree-export)** - Official atlas tree data export
+- **[exile-leveling](https://github.com/HeartofPhos/exile-leveling)** by HeartofPhos - Act progression data
+- **[poe-leveling.com](https://poe-leveling.com)** - Leveling tips and racing strategies
+- **[Path of Exile Wiki](https://www.poewiki.net)** (CC BY-NC-SA 3.0) - Gem data, quest rewards, game mechanics
+- **[poe.ninja](https://poe.ninja)** - Real-time item and currency prices (public API)
+- **[web.poecdn.com](https://web.poecdn.com)** - Gem icons, atlas sprites (official PoE CDN)
 
-## ♿ Accessibility
+**Complete attribution details:** See [ATTRIBUTIONS.md](ATTRIBUTIONS.md)
 
-- **WCAG 2.1 AA Compliant** — All interactive elements meet accessibility standards
-- **Keyboard Navigation** — Full keyboard support with visible focus indicators
-- **Screen Reader Friendly** — Semantic HTML and ARIA labels
-- **Reduced Motion** — Respects `prefers-reduced-motion` preference
-- **High Contrast** — Minimum 4.5:1 text contrast, 5.1:1+ for socket colors
-- **Touch Targets** — 44px minimum for all interactive elements
+### License
 
----
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-## 📱 Responsive Design
+**Note:** The MIT License applies to original code only. Third-party data (PoE Wiki, exile-leveling, GGG atlas export, etc.) remains under its original license terms.
 
-**Breakpoint System:**
-- **xs (375px+)** — Small phones (iPhone SE)
-- **sm (640px+)** — Large phones (landscape)
-- **md (768px+)** — Tablets
-- **lg (1024px+)** — Small desktop
-- **xl (1280px+)** — Large desktop
-- **2xl (1536px+)** — Extra large displays
+### Privacy
 
-**Mobile-First Approach:**
-- Base styles optimized for mobile devices
-- Progressive enhancement for larger screens
-- Touch-friendly interactions throughout
-- Responsive typography and spacing
+No tracking, no ads, no data collection. See [PRIVACY.md](PRIVACY.md) or visit `/privacy` on the live site.
 
 ---
 
-## Credits
+## Disclaimer
 
-Originally built on [Siveran's chromatic calculator](https://github.com/Siveran/siveran.github.io). Extended and evolved by [EtherealCarnivore](https://github.com/EtherealCarnivore) into something... more.
+Omnilyth is a fan-made tool and is not affiliated with Grinding Gear Games. Path of Exile and all related content are trademarks of Grinding Gear Games.
 
-Timeless Jewel Calculator based on [vilsol/timeless-jewels](https://github.com/vilsol/timeless-jewels).
-
-Live pricing powered by [poe.ninja](https://poe.ninja). Shoutout to the real MVP.
-
-Enhanced with comprehensive UX design and accessibility improvements (Feb 2026).
+This tool is provided for informational purposes only. We are not responsible for any game decisions made based on calculator results.
 
 ---
-
-## 📖 Documentation
-
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** — Complete technical architecture documentation
-- **Source Repository** — Private (contains React source code, build configs)
-- **Design System** — Custom PoE-themed components with Tailwind CSS 4
-
----
-
-## 🚀 Contributing
-
-This is the **public deployment repository** containing only built artifacts.
-
-For feature requests, bug reports, or contributions, please contact [@EtherealCarnivore](https://github.com/EtherealCarnivore).
-
----
-
-*If this tool saved you even one Exalted Orb worth of bad crafting decisions, it was worth it.*
-
-*If it didn't — skill issue.*
-
----
-
-**Version:** 2.0 (Feb 2026) | **License:** MIT | **Made with ❤️ for the PoE community**
+**Last Updated:** 2026-02-24
