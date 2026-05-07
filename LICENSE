@@ -15,18 +15,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-────────────────────────────────────────────────────────────────────────
-Notes on scope:
-  - The GPL-3.0 license below covers Omnilyth's original source code.
-  - It does not purport to cover Path of Exile assets, game data, item
-    names, skill names, mod text, sprite icons, or related content,
-    which remain the property of Grinding Gear Games and are used
-    under GGG's fan content policy.
-  - The `workers/` subdirectory carries its own MIT license — see
-    `workers/LICENSE`.
-  - Some bundled data (notably `src/data/leveling/*`) derives from the
-    Path of Exile Wiki under CC BY-NC-SA 3.0; see THIRD_PARTY_LICENSES.md.
-────────────────────────────────────────────────────────────────────────
+(Scope notes — workers/ MIT carve-out, GGG fan content, PoE Wiki
+CC BY-NC-SA 3.0 data — are documented in NOTICE and
+THIRD_PARTY_LICENSES.md.)
 
 
                     GNU GENERAL PUBLIC LICENSE
