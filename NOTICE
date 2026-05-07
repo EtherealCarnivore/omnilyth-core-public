@@ -1,0 +1,47 @@
+Project Omnilyth
+Copyright 2024-2026 EtherealCarnivore and contributors
+
+This product includes software developed by the following projects:
+
+  - Fuse.js (Apache License 2.0)
+    https://github.com/krisk/fuse
+    Copyright (c) Kiro Risk
+
+This product bundles assets and data derived from third parties:
+
+  - Path of Exile Wiki content (CC BY-NC-SA 3.0)
+    https://www.poewiki.net/
+    Used in: src/data/leveling/acts*-data.js,
+             src/data/leveling/gemAvailability.js,
+             src/data/leveling/trials-data.js,
+             src/calculators/colorChances.js (cross-reference data)
+
+  - HeartofPhos/exile-leveling
+    https://github.com/HeartofPhos/exile-leveling
+    Used in: src/data/leveling/* (composite source)
+
+  - Siveran's chromatic calculator (CC0 / public domain dedication)
+    https://siveran.github.io/calc.html
+    Used in: src/calculators/chromaticCalc.js (foundation)
+
+  - vilsol/timeless-jewels (GNU GPL v3)
+    https://github.com/Vilsol/timeless-jewels
+    Used in: src/calculators/timelessJewel.js,
+             src/workers/timelessSearch.js,
+             src/components/TimelessJewelCalculator.jsx,
+             src/components/TimelessTreeView.jsx,
+             src/pages/TimelessJewelPage.jsx
+    The whole project is licensed GPL-3.0 to remain compatible with
+    this upstream. The corresponding source is available at the
+    project repository, satisfying GPL-3.0's source-availability
+    obligation.
+
+  - Path of Exile game data, sprite icons, atlas tree, passive tree
+    Copyright Grinding Gear Games — used under GGG fan content policy
+    https://www.pathofexile.com/legal-rules/general-rules
+    Path of Exile is a trademark of Grinding Gear Games.
+
+For full license text and detailed attributions, see:
+  - LICENSE (GPL-3.0, project)
+  - workers/LICENSE (MIT, Cloudflare Worker carve-out)
+  - THIRD_PARTY_LICENSES.md (full third-party license texts and notes)
