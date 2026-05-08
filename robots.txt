@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# /poe2/runes-of-aldur is announcement-derived content; index it.
+Allow: /poe2/runes-of-aldur
+
+# /poe2 itself is a scaffold landing — flip to indexable as PoE 2 tools
+# ship from 2026-05-29 onward.
+Disallow: /poe2$
+
+Sitemap: https://omnilyth.app/sitemap.xml
